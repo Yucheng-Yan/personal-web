@@ -1,0 +1,38 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content">
+        {{ .Content | markdownify }}
+        <blockquote id="daily-quote" style="margin-top:1.5em;border-left:3px solid var(--primary);padding:0.5em 1em;font-style:italic;">
+            <p id="daily-quote-text" style="margin:0;">&nbsp;</p>
+            <footer style="margin-top:0.5em;text-align:right;font-style:normal;font-size:0.9em;opacity:0.8;">
+                — <span id="daily-quote-author"></span><span id="daily-quote-source"></span>
+            </footer>
+        </blockquote>
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+<script>
+(function () {
+    fetch('{{ "quotes.json" | relURL }}')
+        .then(function (r) { return r.json(); })
+        .then(function (quotes) {
+            if (!quotes || !quotes.length) return;
+            var d = new Date();
+            var key = d.getFullYear() * 372 + d.getMonth() * 31 + d.getDate();
+            var q = quotes[key % quotes.length];
+            document.getElementById('daily-quote-text').textContent = '“' + q.text + '”';
+            document.getElementById('daily-quote-author').textContent = q.author || '';
+            document.getElementById('daily-quote-source').textContent = q.source ? ', ' + q.source : '';
+        })
+        .catch(function () {
+            var el = document.getElementById('daily-quote');
+            if (el) el.style.display = 'none';
+        });
+})();
+</script>
+{{- end -}}

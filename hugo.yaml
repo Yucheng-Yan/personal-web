@@ -72,7 +72,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: Welcome to yucheng's blog!
+    Content: Thanks for stopping by my blog, here's a daily quote that I think deserves a place here
 
   socialIcons:
     - name: github
