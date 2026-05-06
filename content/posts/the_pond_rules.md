@@ -25,7 +25,7 @@ As one of my favorite hackers [Robert Nystrom](https://journal.stuffwithstuff.co
 I write things down not because it's *useful*, but simply because I think it's fun.
 
 ### No. 2 Responsible use of AI
-Every word and every line of code originates from me. AI[^ai] may help me correct my writing, but never generates the content itself.
+Every word and every line of code originates from me (unless specified). AI[^ai] may help me correct my writing, but never generates the content itself.
 
 ### No. 3 Creative contribution
 Some of my projects are inspired by or based on others' work. In addition to clarifying the source, each project I post will meet at least one of the following criteria:
