@@ -71,12 +71,14 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
+    Title: "Hi,"
     Content: Thanks for stopping by my blog, here's a daily quote that I think deserves a place here
 
   socialIcons:
     - name: github
       url: "https://github.com/Yucheng-Yan"
+    - name: mastodon
+      url: "https://hachyderm.io/@yc_yan"
 
   analytics:
     google:
@@ -117,10 +119,6 @@ menu:
       name: tags
       url: /tags/
       weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
-      weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
