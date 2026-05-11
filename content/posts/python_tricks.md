@@ -16,7 +16,7 @@ social:
 ### Using casting functions to determine the datatype of a token
 When you implement a parser, it is very likely that you need to figure out what type your token is.
 
-To do this, simply use a `try / except` block with casting functions like:
+When you try to determine if the token is an integer, instead of using `isdigit()`, consider using a `try / except` block with casting functions like:
 
 ```python
 def is_integer(token):
@@ -25,4 +25,13 @@ def is_integer(token):
         return True
     except ValueError:
         return False
+```
+
+Why? When the token is a negative number, `isdigit()` does not consider it an integer and returns `False`.
+
+```
+>>> '-1'.isdigit()
+False
+>>> int('-1')
+-1
 ```
